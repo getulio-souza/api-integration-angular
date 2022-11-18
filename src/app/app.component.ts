@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { freeApiService } from './services/freeapi.service';
-import { comments } from './classes/comments';
+import { Comments } from './classes/comments';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private freeApiService: freeApiService){
   }
 
-  listcomments!: comments[];
+  listcomments!: Comments[];
   ngOnInit(){
     this.freeApiService.getcomments().subscribe(
       data=>{
