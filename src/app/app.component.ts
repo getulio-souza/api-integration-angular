@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { freeApiService } from './services/freeapi.service';
 import { Comments } from './classes/comments';
+import { Posts } from './classes/posts';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,22 @@ export class AppComponent {
   }
 
   listcomments!: Comments[];
+  listPosts!: Posts[]
+
   ngOnInit(){
+    //calling api without params
     this.freeApiService.getcomments().subscribe(
       data=>{
        this.listcomments = data;
       }
     );
+
+    //calling api with params
+    this.freeApiService.getcommentsByParameter().subscribe(
+      data=>{
+        this.listPosts = data;
+      }
+    )
   }
 }
 

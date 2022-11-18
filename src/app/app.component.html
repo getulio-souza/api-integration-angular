@@ -1,3 +1,5 @@
+
+<!-- display data without params -->
 <h2>get request (https://jsonplaceholder.typicode.com/posts/1/comments)</h2>
 
 <table>
@@ -6,7 +8,7 @@
     <th>Post Id</th>
     <th>Name</th>
     <th>Email</th>
-    <th>Body</th>
+    <th>Subject</th>
   </tr>
 
   <tr *ngFor="let com of listcomments">
@@ -16,4 +18,27 @@
      <td>{{com.email}}</td>
      <td>{{com.body}}</td>
   </tr>
+</table>
+
+
+<!-- display data with params -->
+
+
+<h2>get request (using parameters) (https://jsonplaceholder.typicode.com/comments?postId=1)</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>UserId</th>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+
+   <tr *ngFor="let com of listPosts">
+    <td>{{com.id}}</td>
+    <td>{{com.userId}}</td>
+    <td>{{com.title}}</td>
+    <td>{{com.body}}</td>
+
+   </tr>
 </table>
