@@ -14,6 +14,7 @@ export class AppComponent {
 
   listcomments!: Comments[];
   listPosts!: Posts[]
+  objPosts!: Posts[]
 
   ngOnInit(){
     //calling api without params
@@ -28,7 +29,21 @@ export class AppComponent {
       data=>{
         this.listPosts = data;
       }
+    );
+
+    //calling api with post
+    const opost = new Posts();
+
+    opost.body = 'testBody';
+    opost.title = 'testTitle';
+    opost.userId = 5;
+
+    this.freeApiService.post(opost).subscribe(
+      data=>{
+       this.objPosts = data;
+      }
     )
+
   }
 }
 

@@ -18,4 +18,8 @@ export class freeApiService{
     let params1 = new HttpParams().set('userId', '1');
     return this.HttpClient.get('https://jsonplaceholder.typicode.com/posts', {params: params1})
    }
+
+   post(opost:Posts): Observable<any>{
+    return this.HttpClient.post('https://jsonplaceholder.typicode.com/posts', opost)
+   }
 }

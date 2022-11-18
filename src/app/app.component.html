@@ -22,8 +22,6 @@
 
 
 <!-- display data with params -->
-
-
 <h2>get request (using parameters) (https://jsonplaceholder.typicode.com/comments?postId=1)</h2>
 
 <table>
@@ -41,4 +39,12 @@
     <td>{{com.body}}</td>
 
    </tr>
-</table>
+  </table>
+
+   <!-- display data from post -->
+   <h2>Post data returned (https://jsonplaceholder.typicode.com/posts) </h2>
+
+   <p>id: {{objPosts.id}}</p>
+   <p>UserId: {{objPosts.userId}}</p>
+   <p>Title: {{objPosts.title}}</p>
+   <p>Body: {{objPosts.body}}</p>
